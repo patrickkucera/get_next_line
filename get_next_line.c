@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   getnextline.c                                      :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pakucera <pakucera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 14:55:26 by pakucera          #+#    #+#             */
-/*   Updated: 2022/01/12 17:15:46 by pakucera         ###   ########.fr       */
+/*   Updated: 2022/01/13 10:58:04 by pakucera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,23 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	return (i);
 }
 
+char	*ft_strchr(const char *str, int c)
+{
+	char	find;
+	int		i;
 
+	find = (unsigned char)c;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == find)
+			return ((char *)str + i);
+		i++;
+	}
+	if (str[i] == find)
+		return ((char *)str + i);
+	return (0);
+}
 
 char	*get_next_line(int fd)
 {
@@ -101,13 +117,15 @@ char	*get_next_line(int fd)
 	i = 0;
 	
 	ft_strlcpy(strlcpy_dst, ret,BUFFER_SIZE); 
-	printf ("%s\n", strlcpy_dst);
-	
+	ft_strchr(strlcpy_dst, '\n');
+	if (&ft_strchr != 0)
+	{
+		//printf ("gnl %s", strlcpy_dst);
+	}
 	if (r == 0)
 		return (0);
 	return(strlcpy_dst);
 }
-
 
 
 
@@ -127,7 +145,7 @@ int main ()
 	while (ret != NULL)
 	{
 		ret = get_next_line (fd);
-		printf ("%s\n", ret);
+		printf ("%s", ret);
 	}
 	return (0);
 }
