@@ -1,1 +1,15 @@
-gcc -Wall -Wextra -Werror -D BUFFER_SIZE=5 get_next_line.c && ./a.out
+gcc -Wall -Wextra -Werror -D BUFFER_SIZE=10 get_next_line.c get_next_line.h get_next_line_utils.c && ./a.out      
+
+
+1 fonction : 
+
+
+1x fonction malloc pour le stock (initialiser le stock)
+
+1x lire et ajouter au stock (ATTENTINO AJOUTER ET PAS REMPLACER)
+
+
+
+1x rechercher et copier la ligne jusqu'a \n et la mettre 
+
+1x efface la memoire jusqu'a 
