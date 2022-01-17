@@ -13,3 +13,6 @@ gcc -Wall -Wextra -Werror -D BUFFER_SIZE=10 get_next_line.c get_next_line.h get_
 1x rechercher et copier la ligne jusqu'a \n et la mettre 
 
 1x efface la memoire jusqu'a 
+
+
+https://github.com/wwwwelton/get_next_line/blob/master/get_next_line_utils.c
