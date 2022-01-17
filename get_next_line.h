@@ -6,7 +6,7 @@
 /*   By: pakucera <pakucera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 15:00:17 by pakucera          #+#    #+#             */
-/*   Updated: 2022/01/17 17:51:54 by pakucera         ###   ########.fr       */
+/*   Updated: 2022/01/17 18:06:20 by pakucera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ char	*ft_strchr(const char *s, int c);
 
 char	*ft_strdup(const char *str);
 /**
- * Renvoie un pointeur vers une chaîne d'octets terminée par un caractère nul, qui est un
- * doublon de la chaîne pointée par str. Le pointeur retourné doit être
- * passé à free pour éviter une fuite de mémoire. Si une erreur se produit, un pointeur nul
- * est renvoyé et errno peut être défini.
+ * Renvoie un pointeur vers une chaîne d'octets terminée par un caractère nul,
+ * qui est un doublon de la chaîne pointée par str. Le pointeur retourné 
+ * doit être passé à free pour éviter une fuite de mémoire. Si une erreur se
+ * produit, un pointeur nul est renvoyé et errno peut être défini.
  *
  * Pointeur vers la chaîne d'octets terminée par un caractère nul à dupliquer.
  * 

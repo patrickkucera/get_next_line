@@ -6,7 +6,7 @@
 /*   By: pakucera <pakucera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 17:59:55 by pakucera          #+#    #+#             */
-/*   Updated: 2022/01/17 18:01:29 by pakucera         ###   ########.fr       */
+/*   Updated: 2022/01/17 18:05:49 by pakucera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,17 @@
 #include <fcntl.h>
 #include "get_next_line.h"
 
-int main(void)
+int	main(void)
 {
 	char	*temp;
-	int	fd;
+	int		fd;
 
 	fd = open("text", O_RDONLY);
-
-	while(1)
+	while (1)
 	{
 		temp = get_next_line(fd);
 		if (!temp)
-		break ;
+			break ;
 		printf("%s", temp);
 		free(temp);
 	}
