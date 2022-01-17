@@ -6,7 +6,7 @@
 /*   By: pakucera <pakucera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 15:00:17 by pakucera          #+#    #+#             */
-/*   Updated: 2022/01/17 18:06:20 by pakucera         ###   ########.fr       */
+/*   Updated: 2022/01/17 18:16:24 by pakucera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # define FT_INT_MAX 2147483647
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10
+#  define BUFFER_SIZE 42
 # endif
 
 # include <unistd.h>
