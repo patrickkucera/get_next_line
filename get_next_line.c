@@ -6,7 +6,7 @@
 /*   By: pakucera <pakucera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 14:55:26 by pakucera          #+#    #+#             */
-/*   Updated: 2022/01/17 18:04:48 by pakucera         ###   ########.fr       */
+/*   Updated: 2022/01/19 11:01:57 by pakucera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,15 @@ static char	*get_line(int fd, char **buffer, char **buffer_backup)
 	return (NULL);
 }
 
+/** get_next_line
+ * Lit une ligne d'un descripteur de fichier
+ *
+ * fd Descripteur de fichier à lire.
+ * 
+ * Renvoie une chaîne incluant \\n si est une ligne. En cas de dossier
+ * ne pas avoir \\n renvoyer une chaîne sans \\n, NULL si le fichier est vide
+ * ou une erreur s'est produite.
+ */
 char	*get_next_line(int fd)
 {
 	static char		*buffer_backup[OPEN_MAX + 1];
