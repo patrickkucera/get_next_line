@@ -6,7 +6,7 @@
 /*   By: pakucera <pakucera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 16:49:13 by pakucera          #+#    #+#             */
-/*   Updated: 2022/01/19 11:01:29 by pakucera         ###   ########.fr       */
+/*   Updated: 2022/01/19 11:27:20 by pakucera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
  * C'est la chaîne dont la longueur doit être trouvée.
  * Cette fonction renvoie la longueur de la chaîne.
  */
-size_t	ft_strlen(const char *s)
+size_t	ft_strlen(const char *S)
 {
 	size_t	i;
 
 	i = 0;
-	while (s[i])
+	while (S[i])
 		i++;
 	return (i);
 }
@@ -40,19 +40,19 @@ size_t	ft_strlen(const char *s)
  * Un pointeur vers la chaîne nouvellement allouée, ou un pointeur nul
  * si une erreur s'est produite.
  */
-char	*ft_strdup(const char *str)
+char	*ft_strdup(const char *STR)
 {
 	size_t	i;
 	size_t	len;
 	char	*s;
 
-	len = ft_strlen(str) + 1;
+	len = ft_strlen(STR) + 1;
 	s = (char *)malloc(sizeof(char) * len);
 	if (s == NULL)
 		return (NULL);
 	i = -1;
 	while (++i < len)
-		s[i] = str[i];
+		s[i] = STR[i];
 	return (s);
 }
 
@@ -66,15 +66,15 @@ char	*ft_strdup(const char *str)
  * 
  * La sous-chaîne. NULL si l'allocation échoue.
 */
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *S, unsigned int start, size_t len)
 {
 	size_t	i;
 	size_t	srclen;
 	char	*str;
 
-	if (!s)
+	if (!S)
 		return (NULL);
-	srclen = ft_strlen(s);
+	srclen = ft_strlen(S);
 	if (start > srclen)
 		return (ft_strdup(""));
 	if (start + len > srclen)
@@ -83,9 +83,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!str)
 		return (NULL);
 	i = 0;
-	while (s[start + i] && i < len)
+	while (S[start + i] && i < len)
 	{
-		str[i] = s[start + i];
+		str[i] = S[start + i];
 		i++;
 	}
 	str[i] = '\0';
@@ -105,12 +105,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
  * Cela renvoie un pointeur sur la première occurrence du caractère c
  * dans la chaîne s, ou NULL si le caractère n'est pas trouvé.
  */
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *S, int c)
 {
 	char	*str;
 	char	ch;
 
-	str = (char *)s;
+	str = (char *)S;
 	ch = (char)c;
 	while (*str)
 	{
@@ -132,25 +132,25 @@ char	*ft_strchr(const char *s, int c)
  * 
  * La nouvelle chaîne. NULL si l'allocation échoue.
  */
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(const char *S1, const char *S2)
 {
 	char	*str;
 	size_t	i;
 	size_t	j;
 	size_t	size;
 
-	if (!s1 || !s2)
+	if (!S1 || !S2)
 		return (NULL);
-	size = ft_strlen(s1) + ft_strlen(s2) + 1;
+	size = ft_strlen(S1) + ft_strlen(S2) + 1;
 	str = (char *)malloc(sizeof(char) * size);
 	if (!str)
 		return (NULL);
 	i = -1;
-	while (s1[++i])
-		str[i] = s1[i];
+	while (S1[++i])
+		str[i] = S1[i];
 	j = -1;
-	while (s2[++j])
-		str[i + j] = s2[j];
+	while (S2[++j])
+		str[i + j] = S2[j];
 	str[i + j] = '\0';
 	return (str);
 }
